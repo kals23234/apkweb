@@ -30,7 +30,7 @@ export default defineConfig({
     outDir: 'dist/public',
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, 'client', 'index.html'),
+      input: 'client/index.html',
     },
   },
 });
