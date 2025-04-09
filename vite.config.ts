@@ -20,17 +20,19 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client", "src"), // Keep this
+      "@": path.resolve(__dirname, "src"), // Adjust alias to point to 'src' at the root
       "@shared": path.resolve(__dirname, "shared"),
       "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  root: 'client', // Let's try keeping the root as 'client' again
+  // Remove the root property:
+  // root: 'client',
   build: {
     outDir: 'dist/public',
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, 'client', 'index.html'),
+      // Point directly to index.html at the root:
+      input: path.resolve(__dirname, 'index.html'),
     },
   },
 });
